@@ -26,3 +26,5 @@ func TestRepeat(t *testing.T) {
 		t.Errorf("expected %q but got %q", expected, repeated)
 	}
 }
+
+func ExampleRepeat(t *testing.T)
