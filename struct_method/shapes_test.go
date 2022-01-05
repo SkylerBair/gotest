@@ -1,10 +1,10 @@
 package main
 
-import "testing"
+import "testing" //importing the testing package so that it can be used in this test package.
 
-func TestPerimeter(t *testing.T) {
-	rectangle := Rectangle{10.0, 10.0}
-	got := Perimeter(rectangle)
+func TestPerimeter(t *testing.T) { //This is a function that is named TestPerimeter that has the parameters *testing.T package and its reference name is t.
+	rectangle := Rectangle{10.0, 10.0} //var rectangle is implicitly declared as Rectangle with the float64 paramaters of 10.0, 10.0.
+	got := Perimeter(rectangle)        // var got is implicitly equal to Perimeter with rectangle being passed in.
 	want := 40.0
 
 	if got != want {
