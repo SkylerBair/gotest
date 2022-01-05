@@ -27,7 +27,7 @@ func TestArea(t *testing.T) { // this is a function call testarea the names test
 	for _, tt := range areaTests { // this is the start of a four loop with one undeclared arg and the other being tt and it is going to range through the areaTest struct. ******unsure about how the tt works******.
 		// using tt.name from the case to use it as the `t.Run` test name
 		t.Run(tt.name, func(t *testing.T) { // this is a test run calling the testing.T package referencing areaTest struct neam field. (note next lines are within the return () not the normal {})
-			got := tt.shape.Area() //got is a var that contains shape from the areatest struct and the area function from the interface.
+			got := tt.shape.Area() //got is a var that contains shape from the areatest struct and the area method from the interface.
 			if got != tt.hasArea { //this is the start of a if statement saying if got is not = to hasArea then perform the next line demand. needs to have a shape name from the struct and a Area that then matches the hasArea float
 				t.Errorf("%#v got %g want %g", tt.shape, got, tt.hasArea) //this is the error that gets displyed if got and want arent the same via t.Errorf from the testing package %#V print the default vaule then %g and got and want ti increase accuracy then the actual field names got, want tt.hasarea.
 			}
