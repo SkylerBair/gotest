@@ -10,6 +10,7 @@ func TestSearch(t *testing.T) {
 		want := "this is just a test"
 
 		assertStrings(t, got, want)
+
 	})
 
 	t.Run("unknown word", func(t *testing.T) {
@@ -17,6 +18,15 @@ func TestSearch(t *testing.T) {
 
 		assertError(t, got, ErrNotFound)
 	})
+
+}
+
+func assertStrings(t testing.TB, got, want string) {
+	t.Helper()
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
 }
 
 func TestAdd(t *testing.T) {
@@ -31,13 +41,5 @@ func TestAdd(t *testing.T) {
 
 	if got != want {
 		t.Errorf("got %q want %q", got, want)
-	}
-}
-
-func assertError(t testing.TB, got, want error) {
-	t.Helper()
-
-	if got != want {
-		t.Errorf("got error %q want %q", got, want)
 	}
 }
